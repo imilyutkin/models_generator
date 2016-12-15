@@ -1,0 +1,41 @@
+{
+    "TermGroups":[
+        {
+            "Name": "Lonza",
+            "TermSets": [
+                {
+                    "Name": "Term Set Name",
+                    "UId": "{guid}",
+                    "Terms": [
+                        {
+                            "UId": "{guid}",
+                            "Name": "term Name",
+                            "LCID": 1033,
+                            "Labels": [
+                                {
+                                    "UId": "{guid}",
+                                    "Name": "de term name",
+                                    "LCID": 1000
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "Name": "Intranet2Go",
+            "TermSets": [
+                {
+                    "Name": "Languages",
+                    "Terms": [
+                        {
+                            "Name": "DE",
+                            "UId": "{guid}"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
