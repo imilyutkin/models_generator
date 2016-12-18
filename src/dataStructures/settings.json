@@ -1,0 +1,11 @@
+{
+    "BaseSettings": {
+        "ProjectName": "Test project name",
+        "SupportedLanguages": [
+            "EN",
+            "DE",
+            "FR",
+            "IT"
+        ]
+    }
+}
