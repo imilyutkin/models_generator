@@ -1,49 +1,28 @@
 import React from 'react';
-import TableHeader from './tableHeader';
-import TestButton from './testButton';
-import TableBody from './tableBody'
-import Navigation from './navigation/navigation'
-
-const tasks = [
-    {
-        id: 1,
-        name: "task1"
-    },
-    {
-        id: 2,
-        name: "task2"
-    }
-];
+import { Router, Route, IndexRoute, hashHistory } from 'react-router';
+import TestTable from './table/testTable'
+import Hello from './hello';
+import Layout from './layout'
+import Nodes from './navigation/configuration';
 
 export default class App extends React.Component {
     render() {
         return (
+            <Router history={ hashHistory }>
+                <Route path="/" component={ Layout }>
+                    <IndexRoute component={ Hello }/>
+                    {
+                        Nodes.map((node, index) => {
+                            return <Route key={ index } path={ node.path } component={ node.component }></Route>
+                        })
+                    }
 
-            <div className="col-md-12">
-                <div className="row">
-                    <div className="col-sm-2">
-                        <Navigation />
-                    </div>
-                    <div className="col-sm-10">
-                        <div className="row">
-                            <div className="container-fluid scrollable-container">
+                    <Route path="home" component={ Hello } />
+                    <Route path="terms" component={ TestTable } />
 
-                                <h2>Left side Navigation bar (Fixed)</h2>
-                            
-                                <p>Left side Navigation</p>
-                                <h1>Start</h1>
-                                <table>
-                                    <TableHeader />
-                                    <TableBody tasks={ tasks } />
-                                </table>
-                                <TestButton />
-
-                            </div>
-                        </div>
-   
-                    </div>
-                </div>
-            </div>
+                </Route>
+                
+            </Router>
         )
     }
 }

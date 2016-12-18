@@ -1,6 +1,6 @@
-import { Button } from 'react-bootstrap';
 import React from 'react';
-import NAVIGATION_NODES from './configuration';
+import Nodes from './configuration';
+import { Link } from 'react-router';
 
 export default class Navigation extends React.Component {
     render() {
@@ -10,8 +10,8 @@ export default class Navigation extends React.Component {
                 <a className="navbar-brand" href="#">Brand</a>
                 <ul className="nav navbar-nav">
                 {
-                    NAVIGATION_NODES.map((node, index) => {                        
-                        return <li key={ index }><a href={ node.path }>{ node.name }</a></li>
+                    Nodes.map((node, index) => {                        
+                        return <li key={ index }><Link to={ node.path }>{ node.name }</Link></li>
                     })
                 }
                 </ul>

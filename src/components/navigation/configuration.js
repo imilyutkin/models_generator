@@ -1,10 +1,15 @@
+import TestTable from '../table/testTable'
+import Hello from '../hello';
+
 export default [
     {
         name: "Home",
-        path: "#/home"
+        path: "home",
+        component: Hello
     },
     {
         name: "Terms",
-        path: "#/terms"
+        path: "terms",
+        component: TestTable
     }
 ];
