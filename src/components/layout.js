@@ -11,7 +11,7 @@ export default class Layout extends React.Component {
                     </div>
                     <div className="col-sm-10">
                         <div className="row">
-                            <div className="container-fluid scrollable-container">
+                            <div className="container-fluid scrollable-container main-content-container">
                                 
                                 {this.props.children}
 

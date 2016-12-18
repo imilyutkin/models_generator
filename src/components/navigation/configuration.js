@@ -1,5 +1,6 @@
 import TestTable from '../table/testTable'
 import Hello from '../hello';
+import Settings from '../settings/settings'
 
 export default [
     {
@@ -11,5 +12,10 @@ export default [
         name: "Terms",
         path: "terms",
         component: TestTable
+    },
+    {
+        name: "Settings",
+        path: "settings",
+        component: Settings
     }
 ];
