@@ -1,5 +1,6 @@
 import React from 'react';
 import Storage from '../../services/storage';
+import { NotificationContainer, NotificationManager } from 'react-notifications';
 
 export default class Settings extends React.Component {
 
@@ -23,14 +24,11 @@ export default class Settings extends React.Component {
     handleSubmit(event) {
         event.preventDefault();
         Storage.save("BaseSettings", this.state);
-    }
-
-    save() {
-        Storage.save("BaseSettings", "Lonza");
+        NotificationManager.success('Base settings was saved.', 'Success.', 3000);
     }
 
     render() {
-        return (
+        return (    
             <div className="panel panel-default">
                 <div className="panel-heading">
                     <h1 className="form-header">Project settings.</h1>
