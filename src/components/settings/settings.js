@@ -1,6 +1,7 @@
 import React from 'react';
 import Storage from '../../services/storage';
-import { NotificationContainer, NotificationManager } from 'react-notifications';
+import { NotificationManager } from 'react-notifications';
+import SupportedLanguages from './supportedLanguages';
 
 export default class Settings extends React.Component {
 
@@ -13,11 +14,15 @@ export default class Settings extends React.Component {
 
         this.state = { ProjectName: baseSettings.ProjectName };
 
-        this.handleChange = this.handleChange.bind(this);
+        this.handleChangeProjectName = this.handleChangeProjectName.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleChange(event) {
+    handleChangeProjectName(event) {
+        this.setState({ ProjectName: event.target.value });
+    }
+    
+    handleChangeLanguages(event) {
         this.setState({ ProjectName: event.target.value });
     }
 
@@ -38,13 +43,13 @@ export default class Settings extends React.Component {
                         <div className="form-group">
                             <label htmlFor="inputEmail3" className="col-sm-3 control-label">Project name</label>
                             <div className="col-sm-5">
-                            <input type="text" className="form-control" placeholder="Project name" value={ this.state.ProjectName } onChange={ this.handleChange } />
+                            <input type="text" className="form-control" placeholder="Project name" value={ this.state.ProjectName } onChange={ this.handleChangeProjectName } />
                             </div>
                         </div>                          
                         <div className="form-group">
                             <label htmlFor="inputEmail3" className="col-sm-3 control-label">Supported languages</label>
                             <div className="col-sm-5">
-                            <input type="text" className="form-control" placeholder="Supported languages" />
+                                <SupportedLanguages />
                             </div>
                         </div>
                         <div className="form-group">

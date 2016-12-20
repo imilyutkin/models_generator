@@ -1,6 +1,6 @@
 import React from 'react';
 import Navigation from './navigation/navigation';
-import { NotificationContainer, NotificationManager } from 'react-notifications';
+import { NotificationContainer } from 'react-notifications';
 
 export default class Layout extends React.Component {
     render() {
