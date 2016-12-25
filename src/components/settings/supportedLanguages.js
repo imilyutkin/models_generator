@@ -1,4 +1,5 @@
 import React from 'react';
+import LanguageItem from './languageItem';
 
 export default class SupportedLanguages extends React.Component {
 
@@ -23,6 +24,15 @@ export default class SupportedLanguages extends React.Component {
         }
     }
 
+    removeLanguage(language) {
+        let langPos = this.state.Languages.indexOf(language);
+        let langsState = this.state;
+        if(language !== "" && langPos !== -1) {
+            langsState.Languages.splice(langPos, 1);
+            this.setState(langsState);
+        }
+    }
+
     render() {
         return (
             <div className="form-horizontal" onSubmit={ this.handleSubmit }>       
@@ -37,11 +47,11 @@ export default class SupportedLanguages extends React.Component {
                         <ul className="list-group">
                         {
                             this.state.Languages.map((lang, index) => {
-                                return (<li className="list-group-item" key={ index }>
-                                    { lang }                                    
-                                    <span className="glyphicon glyphicon-pencil" onClick={ this.addLanguage }></span>
-                                    <span className="glyphicon glyphicon-trash" onClick={ this.addLanguage }></span>
-                                </li>);
+                                return (
+                                    <LanguageItem lang={ lang } 
+                                                  key={ index } 
+                                                  removeLanguage={ this.removeLanguage.bind(this, lang) } 
+                                                  />);
                             })
                         }
                         </ul> 

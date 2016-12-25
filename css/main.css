@@ -80,3 +80,13 @@ html,body,.col-md-12,.row {
 .panel-heading .form-header {
   padding: 0% 5%;
 }
+
+.link-button  {
+  margin: 0px 5px;
+  cursor: pointer;
+
+}
+.supported-languages-buttons {
+  display: inline;
+  float: right;
+}
