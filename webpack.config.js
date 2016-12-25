@@ -37,24 +37,8 @@ module.exports = {
           loader: "file-loader" 
         },
         {
-            test: /\.(ttf|eot|svg|woff(2)?)(\S+)?$/,
+            test: /\.(ttf|eot|svg|woff|woff(2)?)(\S+)?$/,
             loader: 'file-loader?publicPath=/&name=fonts/[name].[ext]'
-        },
-        {
-          test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/, 
-          loader: 'url?limit=10000&mimetype=application/font-woff'
-        },
-        {
-          test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, 
-          loader: 'url?limit=10000&mimetype=application/octet-stream'
-        },
-        {
-          test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, 
-          loader: 'file'
-        },
-        {
-          test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, 
-          loader: 'url?limit=10000&mimetype=image/svg+xml'
         }
       ]
     },
