@@ -37,13 +37,13 @@ export default class SupportedLanguages extends React.Component {
         return (
             <div className="form-horizontal" onSubmit={ this.handleSubmit }>       
                 <div className="form-group">
-                    <div className="col-sm-4">
+                    <div className="col-sm-8">
                         <input type="text" className="form-control" placeholder="Language" onChange={ this.handleChange } value={ this.state.Language } />
                         <button type="button" className="btn btn-default" onClick={ this.addLanguage }>Add language</button>
                     </div>
                 </div>      
                 <div className="form-group">
-                    <div className="col-sm-4">
+                    <div className="col-sm-8">
                         <ul className="list-group">
                         {
                             this.state.Languages.map((lang, index) => {

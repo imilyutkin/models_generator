@@ -90,3 +90,7 @@ html,body,.col-md-12,.row {
   display: inline;
   float: right;
 }
+.language-box {
+  width: 40px;
+  height: 20px;
+}
