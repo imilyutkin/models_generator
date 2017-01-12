@@ -9,7 +9,7 @@ export default class SupportedLanguages extends React.Component {
         this.addLanguage = this.addLanguage.bind(this);
         this.handleChange = this.handleChange.bind(this);
         
-        this.state = { Language: "", Languages: ["EN", "DE"] };
+        this.state = { Language: "", Languages: this.props.Languages };
     }
     
     handleChange(event) {
@@ -21,6 +21,7 @@ export default class SupportedLanguages extends React.Component {
             let langs = this.state.Languages;
             langs.push(this.state.Language);
             this.setState({ Language: "", Languages: langs });
+            this.props.updateLanguages(langs);
         }
     }
 
@@ -30,6 +31,7 @@ export default class SupportedLanguages extends React.Component {
         if(language !== "" && langPos !== -1) {
             langsState.Languages.splice(langPos, 1);
             this.setState(langsState);
+            this.props.updateLanguages(langsState.Languages);
         }
     }
 
@@ -50,7 +52,7 @@ export default class SupportedLanguages extends React.Component {
                                 return (
                                     <LanguageItem lang={ lang } 
                                                   key={ index } 
-                                                  removeLanguage={ this.removeLanguage.bind(this, lang) } 
+                                                  removeLanguage={ this.removeLanguage.bind(this, lang) }
                                                   />);
                             })
                         }

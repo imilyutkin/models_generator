@@ -1,6 +1,7 @@
 import TestTable from '../table/testTable'
 import Hello from '../hello';
 import Settings from '../settings/settings'
+import Terms from '../terms/terms'
 
 export default [
     {
@@ -11,7 +12,7 @@ export default [
     {
         name: "Terms",
         path: "terms",
-        component: TestTable
+        component: Terms
     },
     {
         name: "Settings",
