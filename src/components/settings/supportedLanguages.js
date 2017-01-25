@@ -6,13 +6,16 @@ export default class SupportedLanguages extends React.Component {
 
     constructor(props) {
         super(props);
+        if(!this.props.Languages) {
+            this.state = { Language: "", Languages: [] };
+        } else {
+            this.state = { Language: "", Languages: this.props.Languages };
+        }
 
         this.addLanguage = this.addLanguage.bind(this);
         this.handleChange = this.handleChange.bind(this);
-        
-        this.state = { Language: "", Languages: this.props.Languages };
     }
-    
+
     handleChange(event) {
         this.setState({ Language: event.target.value });
     }
@@ -38,27 +41,27 @@ export default class SupportedLanguages extends React.Component {
 
     render() {
         return (
-            <div className="form-horizontal" onSubmit={ this.handleSubmit }>     
-                <ListControl />  
+            <div className="form-horizontal" onSubmit={ this.handleSubmit }>
+                <ListControl />
                 <div className="form-group">
                     <div className="col-sm-8">
                         <input type="text" className="form-control" placeholder="Language" onChange={ this.handleChange } value={ this.state.Language } />
                         <button type="button" className="btn btn-default" onClick={ this.addLanguage }>Add language</button>
                     </div>
-                </div>      
+                </div>
                 <div className="form-group">
                     <div className="col-sm-8">
                         <ul className="list-group">
                         {
                             this.state.Languages.map((lang, index) => {
                                 return (
-                                    <LanguageItem lang={ lang } 
-                                                  key={ index } 
+                                    <LanguageItem lang={ lang }
+                                                  key={ index }
                                                   removeLanguage={ this.removeLanguage.bind(this, lang) }
                                                   />);
                             })
                         }
-                        </ul> 
+                        </ul>
                     </div>
                 </div>
             </div>

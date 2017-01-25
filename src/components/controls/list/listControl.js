@@ -29,7 +29,6 @@ export default class ListControl extends React.Component {
     }
 
     removeItem(item) {
-        debugger;
         let items = this.state.Items.slice();
         let itemPos = items.indexOf(item);
         if(item !== "" && itemPos !== -1) {
@@ -39,14 +38,24 @@ export default class ListControl extends React.Component {
         }
     }
 
+    saveItem(prevItemValue, itemValue) {
+        let items = this.state.Items.slice();
+        let itemPos = items.indexOf(prevItemValue);
+        if(prevItemValue !== "" && itemPos !== -1) {
+            items[itemPos] = itemValue;
+            this.setState({ Item: "", Items: items });
+            //this.props.updateItems(itemsState.Items);
+        }
+    }
+
     render() {
         return (
             <div className="list-control">
-                <div className="row"> 
+                <div className="row">
                     <div className="col-md-8">
                         <input type="text" className="form-control" placeholder="Enter item value" onChange={ this.handleChange } value={ this.state.Item } />
                     </div>
-                    <div className="col-md-2">                            
+                    <div className="col-md-2">
                         <span className="link-button glyphicon glyphicon-plus add-item" onClick={ this.addItem }></span>
                     </div>
                     <div className="col-md-2"></div>
@@ -54,13 +63,14 @@ export default class ListControl extends React.Component {
                 {
                     this.state.Items.map((item, index) => {
                         return (
-                            <ListItem item={ item } 
-                                    key={ index } 
-                                    removeItem={ this.removeItem.bind(this, item) }
+                            <ListItem item={ item }
+                                    key={ index }
+                                    removeItem={ this.removeItem.bind(this) }
+                                    saveItem={ this.saveItem.bind(this) }
                                     />);
                     })
                 }
-            </div>            
+            </div>
         );
     }
 }
