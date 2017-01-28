@@ -10,6 +10,9 @@ export default class ListControl extends React.Component {
         } else {
             this.state = { Item: "", Items: this.props.Items };
         }
+        if(!this.props.updateAppState) {
+            console.error("you should specify updateAppState function to update external app state");
+        }
 
         this.handleChange = this.handleChange.bind(this);
         this.addItem = this.addItem.bind(this);
@@ -24,7 +27,7 @@ export default class ListControl extends React.Component {
             let items = this.state.Items;
             items.push(this.state.Item);
             this.setState({ Item: "", Items: items });
-            //this.props.updateItems(items);
+            //this.props.updateAppState(this.state);
         }
     }
 
@@ -34,7 +37,7 @@ export default class ListControl extends React.Component {
         if(item !== "" && itemPos !== -1) {
             items.splice(itemPos, 1);
             this.setState({ Item: "", Items: items });
-            //this.props.updateItems(itemsState.Items);
+            //this.props.updateAppState(itemsState);
         }
     }
 
@@ -44,7 +47,7 @@ export default class ListControl extends React.Component {
         if(prevItemValue !== "" && itemPos !== -1) {
             items[itemPos] = itemValue;
             this.setState({ Item: "", Items: items });
-            //this.props.updateItems(itemsState.Items);
+            //this.props.updateAppState(this.state);
         }
     }
 

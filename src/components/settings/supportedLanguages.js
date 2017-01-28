@@ -1,6 +1,6 @@
 import React from 'react';
 import LanguageItem from './languageItem';
-import ListControl from '../controls/list/listControl'
+
 
 export default class SupportedLanguages extends React.Component {
 
@@ -42,7 +42,6 @@ export default class SupportedLanguages extends React.Component {
     render() {
         return (
             <div className="form-horizontal" onSubmit={ this.handleSubmit }>
-                <ListControl />
                 <div className="form-group">
                     <div className="col-sm-8">
                         <input type="text" className="form-control" placeholder="Language" onChange={ this.handleChange } value={ this.state.Language } />

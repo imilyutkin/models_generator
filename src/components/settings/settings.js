@@ -2,6 +2,7 @@ import React from 'react';
 import Storage from '../../services/storage';
 import { NotificationManager } from 'react-notifications';
 import SupportedLanguages from './supportedLanguages';
+import ListControl from '../controls/list/listControl';
 
 export default class Settings extends React.Component {
 
@@ -26,7 +27,7 @@ export default class Settings extends React.Component {
     handleChangeProjectTermGroup(event) {
         this.setState({ ProjectTermGroup: event.target.value });
     }
-    
+
     handleChangeLanguages(event) {
         this.setState({ ProjectName: event.target.value });
     }
@@ -41,29 +42,34 @@ export default class Settings extends React.Component {
         this.setState({ Languages: languages });
     }
 
+    updateAppState(languages) {
+        this.setState({ Languages: languages });
+    }
+
     render() {
-        return (    
+        return (
             <div className="panel panel-default">
                 <div className="panel-heading">
                     <h1 className="form-header">Project settings.</h1>
                 </div>
                 <div className="panel-body">
-                     <form className="form-horizontal" onSubmit={ this.handleSubmit }>       
+                     <form className="form-horizontal" onSubmit={ this.handleSubmit }>
                         <div className="form-group">
                             <label htmlFor="inputEmail3" className="col-sm-3 control-label">Project name</label>
                             <div className="col-sm-5">
                             <input type="text" className="form-control" placeholder="Project name" value={ this.state.ProjectName } onChange={ this.handleChangeProjectName } />
                             </div>
-                        </div>                        
+                        </div>
                         <div className="form-group">
                             <label htmlFor="inputEmail3" className="col-sm-3 control-label">Project term group</label>
                             <div className="col-sm-5">
                             <input type="text" className="form-control" placeholder="Project term group" value={ this.state.ProjectTermGroup } onChange={ this.handleChangeProjectTermGroup } />
                             </div>
-                        </div>         
+                        </div>
                         <div className="form-group">
                             <label htmlFor="inputEmail3" className="col-sm-3 control-label">Supported languages</label>
                             <div className="col-sm-5">
+                            <ListControl updateAppState={ this.updateAppState.bind(this) }/>
                                 <SupportedLanguages updateLanguages= { this.updateLanguages.bind(this) } Languages= { this.state.Languages} />
                             </div>
                         </div>
@@ -75,7 +81,7 @@ export default class Settings extends React.Component {
                     </form>
                 </div>
             </div>
-           
+
         )
     }
 }
