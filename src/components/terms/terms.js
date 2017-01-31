@@ -6,7 +6,7 @@ import ListControl from '../controls/list/listControl';
 export default class Terms extends React.Component {
     constructor(props) {
         super(props);
-
+            debugger;
         let baseTermSets = Storage.get("TermSets");
         if(baseTermSets === undefined)
             baseTermSets = { TermSets: [] };
@@ -37,7 +37,7 @@ export default class Terms extends React.Component {
                         <div className="form-group">
                             <label htmlFor="inputEmail3" className="col-sm-3 control-label">Term set names.</label>
                             <div className="col-sm-5">
-                                <ListControl updateAppState={ this.updateAppState.bind(this) } />
+                                <ListControl updateAppState={ this.updateAppState.bind(this) } Items={ this.state.TermSets } />
                             </div>
                         </div>
                         <div className="form-group">
