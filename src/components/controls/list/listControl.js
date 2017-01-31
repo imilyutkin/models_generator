@@ -27,7 +27,7 @@ export default class ListControl extends React.Component {
             let items = this.state.Items;
             items.push(this.state.Item);
             this.setState({ Item: "", Items: items });
-            //this.props.updateAppState(this.state);
+            this.props.updateAppState(this.state.Items);
         }
     }
 
@@ -37,7 +37,7 @@ export default class ListControl extends React.Component {
         if(item !== "" && itemPos !== -1) {
             items.splice(itemPos, 1);
             this.setState({ Item: "", Items: items });
-            //this.props.updateAppState(itemsState);
+            this.props.updateAppState(itemsState.Items);
         }
     }
 
@@ -47,7 +47,7 @@ export default class ListControl extends React.Component {
         if(prevItemValue !== "" && itemPos !== -1) {
             items[itemPos] = itemValue;
             this.setState({ Item: "", Items: items });
-            //this.props.updateAppState(this.state);
+            this.props.updateAppState(this.state.Items);
         }
     }
 

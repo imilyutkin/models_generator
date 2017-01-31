@@ -1,7 +1,6 @@
 import React from 'react';
 import Storage from '../../services/storage';
 import { NotificationManager } from 'react-notifications';
-import SupportedLanguages from './supportedLanguages';
 import ListControl from '../controls/list/listControl';
 
 export default class Settings extends React.Component {
@@ -69,8 +68,7 @@ export default class Settings extends React.Component {
                         <div className="form-group">
                             <label htmlFor="inputEmail3" className="col-sm-3 control-label">Supported languages</label>
                             <div className="col-sm-5">
-                            <ListControl updateAppState={ this.updateAppState.bind(this) }/>
-                                <SupportedLanguages updateLanguages= { this.updateLanguages.bind(this) } Languages= { this.state.Languages} />
+                                <ListControl updateAppState={ this.updateAppState.bind(this) } Items={ this.state.Languages }/>
                             </div>
                         </div>
                         <div className="form-group">
