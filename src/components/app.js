@@ -1,6 +1,5 @@
 import React from 'react';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
-import TestTable from './table/testTable'
 import Hello from './hello';
 import Layout from './layout'
 import Nodes from './navigation/configuration';
@@ -18,10 +17,8 @@ export default class App extends React.Component {
                     }
 
                     <Route path="home" component={ Hello } />
-                    <Route path="terms" component={ TestTable } />
 
                 </Route>
-                
             </Router>
         )
     }

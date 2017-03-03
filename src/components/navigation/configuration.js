@@ -1,7 +1,4 @@
-import TestTable from '../table/testTable'
 import Hello from '../hello';
-import Settings from '../settings/settings'
-import Terms from '../terms/terms'
 
 export default [
     {
@@ -12,11 +9,16 @@ export default [
     {
         name: "Terms",
         path: "terms",
-        component: Terms
+        component: Hello
     },
     {
-        name: "Settings",
-        path: "settings",
-        component: Settings
+        name: "Fields",
+        path: "fields",
+        component: Hello
+    },
+    {
+        name: "Content Types",
+        path: "cts",
+        component: Hello
     }
 ];
