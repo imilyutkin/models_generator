@@ -6,6 +6,9 @@ export default class ListControl extends React.Component {
         return (
         <div>
             <div id="list" className="pure-u-1">
+                <form className="pure-form list-filter-form">
+                    <input className="pure-input-1" type="text" placeholder="Type to filter..." />
+                </form>
 
                 <ListItemControl />
                 <ListItemControl />
