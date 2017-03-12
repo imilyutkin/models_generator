@@ -7,7 +7,6 @@ export default class List extends React.Component {
             <div id="list" className="pure-u-1">
                 <div className="email-item email-item-selected pure-g">
                     <div className="pure-u">
-
                     </div>
 
                     <div className="pure-u-3-4">

@@ -3,7 +3,7 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import Hello from './hello';
 import Layout from './layout'
 import Nodes from './navigation/configuration';
-import List from './list';
+import List from './shared/list/listControl';
 import Welcome from './welcome';
 import NotFound from './notfound';
 
