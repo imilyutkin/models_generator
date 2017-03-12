@@ -3,7 +3,7 @@ import React from 'react';
 export default class List extends React.Component {
     render() {
         return (
-
+        <div>
             <div id="list" className="pure-u-1">
                 <div className="email-item email-item-selected pure-g">
                     <div className="pure-u">
@@ -77,9 +77,7 @@ export default class List extends React.Component {
 
                 <div className="email-item pure-g">
                     <div className="pure-u">
-
                     </div>
-
                     <div className="pure-u-3-4">
                         <h5 className="email-name">Yahoo! Finance</h5>
                         <h4 className="email-subject">How to protect your finances from winter storms</h4>
@@ -91,9 +89,7 @@ export default class List extends React.Component {
 
                 <div className="email-item pure-g">
                     <div className="pure-u">
-
                     </div>
-
                     <div className="pure-u-3-4">
                         <h5 className="email-name">Yahoo! News</h5>
                         <h4 className="email-subject">Summary for April 3rd, 2012</h4>
@@ -104,6 +100,11 @@ export default class List extends React.Component {
                 </div>
             </div>
 
+            <div id="main" className="pure-u-1">
+
+                { this.props.children }
+            </div>
+        </div>
         )
     }
 }

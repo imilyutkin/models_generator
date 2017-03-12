@@ -9,8 +9,8 @@ export default class Layout extends React.Component {
             <div id="layout" className="content pure-g">
                 <NotificationContainer />
                 <Navigation />
-                <List />
-                {this.props.children}
+                
+                { this.props.children }
 
             </div>
         )
