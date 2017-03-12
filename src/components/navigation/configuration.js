@@ -1,24 +1,22 @@
-import Hello from '../hello';
-
 export default [
     {
         name: "Home",
-        path: "home",
-        component: Hello
+        path: "home"
     },
     {
         name: "Terms",
-        path: "terms",
-        component: Hello
+        path: "terms"
     },
     {
         name: "Fields",
-        path: "fields",
-        component: Hello
+        path: "fields"
     },
     {
         name: "Content Types",
         path: "cts",
-        component: Hello
+    },
+    {
+        name: "Lists",
+        path: "list"
     }
 ];

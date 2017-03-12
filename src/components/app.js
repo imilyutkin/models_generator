@@ -5,6 +5,7 @@ import Layout from './layout'
 import Nodes from './navigation/configuration';
 import List from './list';
 import Welcome from './welcome';
+import NotFound from './notfound';
 
 export default class App extends React.Component {
     render() {
@@ -17,7 +18,7 @@ export default class App extends React.Component {
                         </Route>
                     </Route>
                 </Route>
-
+                <Route path="*" component={ NotFound }/>
             </Router>
         )
     }
