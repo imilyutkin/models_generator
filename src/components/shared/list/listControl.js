@@ -1,6 +1,8 @@
 import React from 'react';
 import ListItemControl from './listItemControl';
 
+import ListStore from '../../../stores/listStore';
+
 export default class ListControl extends React.Component {
     render() {
         return (
@@ -10,6 +12,7 @@ export default class ListControl extends React.Component {
                     <input className="pure-input-1" type="text" placeholder="Type to filter..." />
                 </form>
 
+                <ListItemControl />
                 <ListItemControl />
                 <ListItemControl />
                 <ListItemControl />
