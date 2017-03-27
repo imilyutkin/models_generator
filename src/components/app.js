@@ -3,9 +3,9 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import Hello from './hello';
 import Layout from './layout'
 import Nodes from './navigation/configuration';
-import List from './shared/list/listControl';
 import Welcome from './welcome';
 import NotFound from './notfound';
+import FieldList from './controls/fields/fieldList';
 
 export default class App extends React.Component {
     render() {
@@ -13,7 +13,7 @@ export default class App extends React.Component {
             <Router history={ hashHistory }>
                 <Route path="/" component={ Layout }>
                     <IndexRoute component={ Welcome }/>
-                    <Route path="list" component={ List }>
+                    <Route path="fields" component={ FieldList }>
                         <Route path="hello" component={ Hello }>
                         </Route>
                     </Route>

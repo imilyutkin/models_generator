@@ -1,21 +1,61 @@
 import React from 'react';
 import ListItemControl from './listItemControl';
+import {observer} from "mobx-react";
 
-import ListStore from '../../../stores/listStore';
-
+@observer
 export default class ListControl extends React.Component {
+
+    constructor(props) {
+        super(props);
+    }
+
+    filter(e) {
+        this.props.store.filter = e.target.value;
+    }
+
     render() {
         return (
         <div>
             <div id="list" className="pure-u-1">
                 <form className="pure-form list-filter-form">
-                    <input className="pure-input-1" type="text" placeholder="Type to filter..." />
+                    <input className="pure-input-1" type="text" onChange={this.filter.bind(this)} placeholder="Type to filter..." />
                 </form>
 
-                <ListItemControl />
-                <ListItemControl />
-                <ListItemControl />
-                <ListItemControl />
+                {
+                    this.props.store.filteredItems.map((item, index) => {
+                        return (
+                            <ListItemControl
+                                key={index}
+                                name={item.name}
+                                subject={item.subject}
+                                desc={item.desc}
+                            />
+                            );
+                    })
+                }
+
+                <ListItemControl
+                    name="Tilo Mitra"
+                    subject="Hello from Toronto"
+                    desc="Hey, I just wanted to check in with you from Toronto. I got here earlier today."
+                />
+                <ListItemControl
+                    name="Tilo Mitra"
+                    subject="Hello from Toronto"
+                    desc="Hey, I just wanted to check in with you from Toronto. I got here earlier today."
+                />
+
+                <ListItemControl
+                    name="Tilo Mitra"
+                    subject="Hello from Toronto"
+                    desc="Hey, I just wanted to check in with you from Toronto. I got here earlier today."
+                />
+
+                <ListItemControl
+                    name="Tilo Mitra"
+                    subject="Hello from Toronto"
+                    desc="Hey, I just wanted to check in with you from Toronto. I got here earlier today."
+                />
 
             </div>
 
@@ -25,4 +65,8 @@ export default class ListControl extends React.Component {
         </div>
         )
     }
+}
+
+ListControl.props = {
+  store: React.PropTypes.object
 }

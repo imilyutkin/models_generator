@@ -2,6 +2,10 @@ import React from 'react';
 import { Link } from 'react-router';
 
 export default class ListItemControl extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
     render() {
         return (
             <Link to="list/hello">
@@ -10,14 +14,20 @@ export default class ListItemControl extends React.Component {
                     </div>
 
                     <div className="pure-u-3-4">
-                        <h5 className="email-name">Tilo Mitra</h5>
-                        <h4 className="email-subject">Hello from Toronto</h4>
+                        <h5 className="email-name">{this.props.name}</h5>
+                        <h4 className="email-subject">{ this.props.subject}</h4>
                         <p className="email-desc">
-                            Hey, I just wanted to check in with you from Toronto. I got here earlier today.
+                        {this.props.desc}
                         </p>
                     </div>
                 </div>
             </Link>
         )
     }
+}
+
+ListItemControl.props = {
+  name: React.PropTypes.string,
+  subject: React.PropTypes.string,
+  desc: React.PropTypes.string
 }

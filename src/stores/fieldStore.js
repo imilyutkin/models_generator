@@ -1,6 +1,6 @@
 import { observable, computed } from 'mobx';
 
-class ListItemsStore {
+class FieldStore {
 
     constructor() {
         this.email = {
@@ -16,6 +16,9 @@ class ListItemsStore {
         this.items.push(this.email);
         this.items.push(this.email);
         this.items.push(this.email);
+        this.items.push(this.email);
+        this.items.push(this.email);
+        this.items.push(this.email1);
         this.items.push(this.email1);
     }
 
@@ -31,4 +34,4 @@ class ListItemsStore {
     @observable filter = "";
 }
 
-export default new ListItemsStore();
+export default new FieldStore();
