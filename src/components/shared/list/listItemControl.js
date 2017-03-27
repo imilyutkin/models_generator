@@ -8,7 +8,7 @@ export default class ListItemControl extends React.Component {
 
     render() {
         return (
-            <Link to="list/hello">
+            <Link to="fields/hello">
                 <div className="email-item email-item-selected pure-g">
                     <div className="pure-u">
                     </div>
