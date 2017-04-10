@@ -6,6 +6,7 @@ import Nodes from './navigation/configuration';
 import Welcome from './welcome';
 import NotFound from './notfound';
 import FieldList from './controls/fields/fieldList';
+import NewFieldsControl from './controls/fields/newFields';
 
 export default class App extends React.Component {
     render() {
@@ -14,7 +15,7 @@ export default class App extends React.Component {
                 <Route path="/" component={ Layout }>
                     <IndexRoute component={ Welcome }/>
                     <Route path="fields" component={ FieldList }>
-                        <Route path="hello" component={ Hello }>
+                        <Route path="new" component={ NewFieldsControl }>
                         </Route>
                     </Route>
                 </Route>

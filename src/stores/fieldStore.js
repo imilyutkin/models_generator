@@ -1,4 +1,4 @@
-import { observable, computed } from 'mobx';
+import { observable, computed, action } from 'mobx';
 import Storage from '../services/storage';
 
 class FieldStore {
@@ -14,12 +14,21 @@ class FieldStore {
         }
     }
 
+    getItemFields() {
+        return [
+            {
+                "Name": "Title",
+                "Type": "text"
+            }
+        ];
+    }
+
     @computed get filteredItems() {
         var matchReg = new RegExp(this.filter, "i");
         return this.items.filter(item => !this.filter || matchReg.test(item.name));
     }
 
-    createItem(name) {
+    @action createItem(name) {
         let newItem = {
             name,
             subject: "This si sparta.",

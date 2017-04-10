@@ -130,32 +130,32 @@ a {
 
 
 /* Email Item Styles */
-.email-item {
+.list-item {
     padding: 0.9em 1em;
     border-bottom: 1px solid #ddd;
     border-left: 6px solid transparent;
 }
-    .email-avatar {
+    .list-avatar {
         border-radius: 3px;
         margin-right: 0.5em;
     }
-    .email-name,
-    .email-subject {
+    .list-name,
+    .list-subject {
         margin: 0;
     }
-    .email-name {
+    .list-name {
         text-transform: uppercase;
         color: #999;
     }
-    .email-desc {
+    .list-desc {
         font-size: 80%;
         margin: 0.4em 0;
     }
 
-.email-item-selected {
+.list-item-selected {
     background: #eee;
 }
-.email-item-unread {
+.list-item-unread {
     border-left: 6px solid #1b98f8;
 }
 

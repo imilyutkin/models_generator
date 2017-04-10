@@ -9,15 +9,15 @@ export default class ListItemControl extends React.Component {
     render() {
         return (
             <Link to="fields/hello">
-                <div className="email-item email-item-selected pure-g">
+                <div className="list-item list-item-selected pure-g">
                     <div className="pure-u">
                     </div>
 
                     <div className="pure-u-3-4">
-                        <h5 className="email-name">{this.props.name}</h5>
-                        <h4 className="email-subject">{ this.props.subject}</h4>
-                        <p className="email-desc">
-                        {this.props.desc}
+                        <h5 className="list-name">{this.props.name}</h5>
+                        <h4 className="list-subject">{ this.props.subject}</h4>
+                        <p className="list-desc">
+                            {this.props.desc}
                         </p>
                     </div>
                 </div>

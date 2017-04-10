@@ -1,10 +1,10 @@
 import React from 'react';
-import ListControl from '../../shared/list/listControl';
+import FormControl from '../../shared/forms/formControl';
 import {observer} from "mobx-react";
 import FieldStore from '../../../stores/fieldStore';
 
 @observer
-export default class FieldsListControl extends React.Component {
+export default class NewFieldsControl extends React.Component {
 
     constructor(props) {
         super(props);
@@ -12,7 +12,7 @@ export default class FieldsListControl extends React.Component {
 
     render() {
         return (
-            <ListControl store={FieldStore} type="fields" routeChildren={ this.props.children } />
+            <FormControl store={FieldStore} />
         )
     }
 }
