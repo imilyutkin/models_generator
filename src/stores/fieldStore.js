@@ -1,17 +1,12 @@
 import { observable, computed, action } from 'mobx';
 import Storage from '../services/storage';
+import BaseStore from '../components/shared/stores/baseStore';
 
-class FieldStore {
+class FieldStore extends BaseStore {
 
-    @observable items = [];
-    @observable filter = "";
 
     constructor() {
-        let fieldsValue = Storage.get('fields');
-        if(!!fieldsValue) {
-            let fields = JSON.parse(fieldsValue);
-            this.items = fields;
-        }
+        super(Storage, "fields");
     }
 
     getItemFields() {
@@ -21,22 +16,6 @@ class FieldStore {
                 "Type": "text"
             }
         ];
-    }
-
-    @computed get filteredItems() {
-        var matchReg = new RegExp(this.filter, "i");
-        return this.items.filter(item => !this.filter || matchReg.test(item.name));
-    }
-
-    @action createItem(name) {
-        let newItem = {
-            name,
-            subject: "This si sparta.",
-            desc: "Hello darkness my old friend. I come to talk with you again"
-        };
-        this.items.push(newItem);
-
-        Storage.save('fields', JSON.stringify(this.items));
     }
 }
 
